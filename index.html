@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular 4 Andy </title>
+</head>
+<body>
+This should work in those browsers: <a href="http://caniuse.com/cors">http://caniuse.com/cors</a>
+
+</body>
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-resource.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="_app.js"></script>
+<script src="appCtrl.js"></script>
+<script src="productListCtrl.js"></script>
+<script src="productDAO.js"></script>
+<script>
+    var $body = angular.element(document.body);
+    //    $body.append(angular.element('<table ng-controller="ProductListCtrl"><tr ng-repeat="product in filteredProducts"><td>{{ product.id }}</td><td>{{ product.name }}</td><td>{{ product.likes }}</td></tr></table> '));
+    $body.append(angular.element('<div ng-view></div>'));
+    angular.bootstrap(document.body, ['DemoApp']);
+</script>
+</html>
