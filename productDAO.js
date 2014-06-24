@@ -3,7 +3,8 @@
     var module = angular.module('dao', ['ngResource']);
     module.factory('ProductDAO', function ($resource)
     {
-        var ProductResource = $resource('http://restshop:8000/api/product/:id/:action', {'id': '@id'}, {'like': {method: 'POST', params: {action: 'like'}}});
+        var ProductResource = $resource('http://restshop:8000/api/product/:id/:action', {'id': '@id'}, {'like': {method: 'POST', params: {action: 'like'}},
+            'query': {method: 'JSONP', isArray: true, params: {callback: 'JSON_CALLBACK'}}});
         return {
             like: function (product)
             {
